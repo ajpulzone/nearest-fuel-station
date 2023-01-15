@@ -1,0 +1,18 @@
+<h1>Search Results</h1>
+
+<% @stations.each do |station| %>
+  Station Name: <%= station.name %>
+  Address: <%= station.formatted_address %>
+  Fuel Type: <%= station.fuel_type %>
+  Hours of Operation: <%= station.hours %>
+<% end %>
+
+Travel Information
+<% @gps.each do |travel_info| %>
+  Distance to Destination: <%= travel_info.distance %> miles
+  Time to Destination: <%= travel_info.time %> minutes
+  Directions: 
+    <% travel_info.directions.each do |direction| %>
+      <%= direction %>
+    <% end %>
+<% end %>
